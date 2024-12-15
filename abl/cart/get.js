@@ -1,8 +1,13 @@
 //const mongoose = require("mongoose");
 const Cart = require("../../schema/CartSchema.js");
+
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/shopping_app_db")
-//mongoose.connect("mongodb://localhost/shopping_app_db")
+
+const shoppingAppDb = mongoose.createConnection('mongodb://localhost/shopping_app_db', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
 
 async function GetAbl(req, res) {
